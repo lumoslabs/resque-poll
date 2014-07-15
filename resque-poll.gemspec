@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.add_dependency "resque-status"
   s.add_dependency "strong_parameters"
 
+  s.add_development_dependency "fakeredis"
   s.add_development_dependency "pry"
   s.add_development_dependency "rspec-rails", "~> 2.14"
   s.add_development_dependency "sqlite3"
