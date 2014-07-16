@@ -14,10 +14,15 @@ describe ResquePoll::JobsController do
   describe 'GET show' do
     subject { get :show, {id: job_id, format: :json}; response }
 
-    pending 'without a logged in user' do
+    context 'when an authentication method is defined' do
+      before { ResquePoll::Engine.config.stub(authentication_method: :authorize_staff) }
+
       let(:job_id) { 'some-job-id' }
 
-      it { should be_redirect }
+      it 'calls the authentication method' do
+        controller.should_receive(:authorize_staff)
+        subject
+      end
     end
 
     context 'with a non-existent job ID' do
