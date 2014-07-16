@@ -2,14 +2,13 @@ class ResquePoller
   @INTERVAL: 2000
 
   constructor: (opts) ->
-    @$elem = opts.elem
-    @url   = opts.url
-
-  poll: => @interval = setInterval(_poll, @INTERVAL)
+    @$elem    = opts.elem
+    @url      = opts.url
+    @interval = setInterval(@_poll, ResquePoller.INTERVAL)
 
   # private
 
-  _poll: -> $.getJSON @url, (resp) -> _handleResponse(resp)
+  _poll: => $.getJSON @url, (resp) => @_handleResponse(resp)
 
   _handleResponse: (resp) ->
     return if resp.status is 'queued'
