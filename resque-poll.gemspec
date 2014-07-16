@@ -1,6 +1,6 @@
 $:.push File.expand_path("../lib", __FILE__)
 
-require "resque-poll/version"
+require "resque_poll/version"
 
 Gem::Specification.new do |s|
   s.name        = "resque-poll"

@@ -1,4 +1,4 @@
-require "resque-poll/engine"
+require "resque_poll/engine"
 
 module ResquePoll
 end
