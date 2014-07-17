@@ -75,6 +75,6 @@ $('form')
 
 Since a common use case would be to enable/disable the submit button during the course of processing the background job, the `resque-poll-disable-with` attribute can be used to automatically disable/enable a button with a given value when processing has begun or completed.
 
-```ruby
+```erb
 <%= f.submit :'data-resque-poll-disable-with' => 'Creating...' %>
 ```
