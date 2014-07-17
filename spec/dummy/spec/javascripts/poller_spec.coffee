@@ -8,14 +8,28 @@ describe 'ResquePoller', ->
     expect(ResquePoller.INTERVAL).to.be.above(0)
 
   describe 'new', ->
+    beforeEach ->
+      @elem = $(document.createElement('div'))
+
     it 'sets the poll url', ->
       poll = new ResquePoller(url: '/some/url')
       expect(poll.url).to.equal('/some/url')
 
     it 'sets the element', ->
-      elem = $(document.createElement('div'))
-      poll = new ResquePoller(elem: elem)
-      expect(poll.$elem).to.equal(elem)
+      poll = new ResquePoller(elem: @elem)
+      expect(poll.$elem).to.equal(@elem)
+
+    it 'uses the specified interval timeout', ->
+      sinon.stub(window, 'setInterval')
+      poll = new ResquePoller(elem: @elem, interval: 500)
+      expect(window.setInterval).to.have.been.calledWithMatch({}, 500)
+      window.setInterval.restore()
+
+    it 'uses a default interval timeout if one is not provided', ->
+      sinon.stub(window, 'setInterval')
+      poll = new ResquePoller(elem: @elem)
+      expect(window.setInterval).to.have.been.calledWithMatch({}, ResquePoller.INTERVAL)
+      window.setInterval.restore()
 
   describe '_handleResponse', ->
     beforeEach ->

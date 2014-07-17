@@ -2,9 +2,9 @@ class ResquePoller
   @INTERVAL: 2000
 
   constructor: (opts) ->
-    @$elem    = opts.elem
-    @url      = opts.url
-    @interval = setInterval(@_poll, ResquePoller.INTERVAL)
+    @$elem      = opts.elem
+    @url        = opts.url
+    @intervalID = setInterval(@_poll, opts.interval || ResquePoller.INTERVAL)
 
   # private
 
@@ -12,7 +12,7 @@ class ResquePoller
 
   _handleResponse: (resp) ->
     return if resp.status is 'queued'
-    clearInterval @interval if @interval
+    clearInterval @intervalID if @intervalID
     switch resp.status
       when 'completed'
         @$elem.trigger 'resque:poll:stopped', resp

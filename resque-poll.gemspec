@@ -13,9 +13,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "bartt-ssl_requirement", '~> 1.4.2'
-  s.add_dependency "rails"
-  s.add_dependency "resque-status"
+  s.add_dependency "bartt-ssl_requirement", "~> 1.4"
+  s.add_dependency "rails", "~> 3.2.15"
+  s.add_dependency "resque-status", "~> 0.4"
   s.add_dependency "strong_parameters"
 
   s.add_development_dependency "fakeredis"
