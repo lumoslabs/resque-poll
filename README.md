@@ -50,12 +50,12 @@ class MoviesController < ApplicationController
     render json: poll.to_json
   end
 end
+```
 
 resque-poll will fire events when the polling has completed (successfully or unsuccessfully). To make use of this, you can hook into the triggered events and take action on them. Any data passed back from the resque job will also be available to you in the response.
 
 The following events are fired:
 
-```
 resque:poll:stopped - fired when processing has finished successfully or unsuccessfully
 resque:poll:success - fired when processing has finished successfully
 resque:poll:stopped - fired when processing has finished unsuccessfully
