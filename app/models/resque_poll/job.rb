@@ -1,4 +1,6 @@
 class ResquePoll::Job
+  extend ActiveModel::Naming
+
   attr_reader :klass, :params, :job_id
 
   def initialize(klass, params)
