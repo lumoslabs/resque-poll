@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/lumoslabs/resque-poll.png)](https://travis-ci.org/lumoslabs/resque-poll)
+
 # resque-poll
 
 resque-poll is a Rails engine that allows you to easily do long polling for Resque jobs. resque-poll depends on [resque-status](https://github.com/quirkey/resque-status).
