@@ -23,14 +23,6 @@ Require the javascript files & the dependencies inyour application.js javascript
 //= require resque_poll
 ```
 
-## Configuration
-
-You can optionally define an authentication and/or authorization method that will be checked before access is allowed to the resque polling status information. To do this, create an initializer in your app under `config/initializers/resque_poll.rb` and define the method:
-
-```ruby
-ResquePoll::Engine.config.authentication_method = :authorize_user # default: nil
-```
-
 ## Usage
 
 In a form, the `data-resque-poll` attribute to your form tag:

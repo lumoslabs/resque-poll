@@ -14,17 +14,6 @@ describe ResquePoll::JobsController do
   describe 'GET show' do
     subject { get :show, {id: job_id, format: :json}; response }
 
-    context 'when an authentication method is defined' do
-      before { ResquePoll::Engine.config.stub(authentication_method: :authorize_staff) }
-
-      let(:job_id) { 'some-job-id' }
-
-      it 'calls the authentication method' do
-        controller.should_receive(:authorize_staff)
-        subject
-      end
-    end
-
     context 'with a non-existent job ID' do
       let(:job_id) { 'non-existent' }
 
