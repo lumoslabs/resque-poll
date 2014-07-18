@@ -1,10 +1,7 @@
 require 'spec_helper'
+require 'support/does_nothing_job'
 
 describe ResquePoll::Job do
-  class DoesNothingJob
-    def self.create(*args); end
-  end
-
   let(:job) { ResquePoll::Job.new(DoesNothingJob, args) }
   let(:args) { {foo: 'bar'} }
 

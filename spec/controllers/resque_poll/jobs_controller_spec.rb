@@ -1,15 +1,8 @@
 require 'spec_helper'
+require 'support/does_nothing_job'
 
 describe ResquePoll::JobsController do
   routes { ResquePoll::Engine.routes }
-
-  class DoesNothingJob
-    include Resque::Plugins::Status
-
-    def perform
-      completed('stuff_i_did' => 'foo')
-    end
-  end
 
   describe 'GET show' do
     subject { get :show, {id: job_id, format: :json}; response }
