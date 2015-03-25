@@ -11,7 +11,7 @@ class ResquePoller
   _poll: => $.getJSON @url, (resp) => @_handleResponse(resp)
 
   _handleResponse: (resp) ->
-    return if resp.status is 'queued'
+    return if resp.status is 'queued' || resp.status is 'working'
     clearInterval @intervalID if @intervalID
     switch resp.status
       when 'completed'
