@@ -14,12 +14,12 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "bartt-ssl_requirement", "~> 1.4"
-  s.add_dependency "rails", "~> 3.2.15"
+  s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency "resque-status", "~> 0.4"
-  s.add_dependency "strong_parameters"
 
   s.add_development_dependency "fakeredis"
   s.add_development_dependency "pry"
-  s.add_development_dependency "rspec-rails", "~> 2.14"
+  s.add_development_dependency "rspec-its", '~> 1.1.0'
+  s.add_development_dependency "rspec-rails", "~> 3.2.1"
   s.add_development_dependency "sqlite3"
 end

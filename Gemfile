@@ -5,7 +5,6 @@ gemspec
 gem "coffee-rails"
 gem "jquery-rails"
 gem "resque-status"
-gem "strong_parameters"
 
 group :test do
   gem "capybara"
