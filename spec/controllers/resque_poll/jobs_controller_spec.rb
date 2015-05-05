@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'support/does_nothing_job'
 
-describe ResquePoll::JobsController do
+describe ResquePoll::JobsController, type: :controller do
   routes { ResquePoll::Engine.routes }
 
   describe 'GET show' do
@@ -27,7 +27,7 @@ describe ResquePoll::JobsController do
     context 'with a completed job' do
       let(:job_id) { DoesNothingJob.create }
 
-      before { Resque.stub(inline?: true) }
+      before { allow(Resque).to receive_messages(inline?: true) }
 
       its(:status) { should eql(200) }
 
