@@ -1,5 +1,5 @@
-if defined?(Konacha)
-  Konacha.configure do |config|
-    config.driver = :webkit
-  end
-end
+Konacha.configure do |config|
+  require 'capybara/poltergeist'
+  config.spec_dir = "spec/javascripts"
+  config.driver   = :poltergeist
+end if defined?(Konacha)
