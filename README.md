@@ -72,3 +72,7 @@ Since a common use case would be to enable/disable the submit button during the 
 ```erb
 <%= f.submit :'data-resque-poll-disable-with' => 'Creating...' %>
 ```
+
+## Dependencies
+
+resque-poll's latest version, 2.0.0, is dependent on Rails 4.0.0. It is not backwards-compatible with Rails 3. For the Rails 3 compatible version of resque-poll, please downgrade to 1.0.1.
