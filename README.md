@@ -40,7 +40,7 @@ Your controller can then use ResquePoll to return the appropriate response to be
 ```ruby
 class MoviesController < ApplicationController
   def create
-    poll = ResquePoll.create(LongRunningMoveJob, {title: params[:title]})
+    poll = ResquePoll::Job.create(LongRunningMoveJob, {title: params[:title]})
     render json: poll.to_json
   end
 end
