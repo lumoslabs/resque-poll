@@ -1,7 +1,11 @@
+sudo: false
+notifications:
+  email: false
 language: ruby
-
 rvm:
-  - 2.1.1
-  - 2.0.0
-
-script: bundle exec rspec
+  - 2.1.6
+script:
+  - cd spec/dummy
+  - RAILS_ENV=test bundle exec rake konacha:run
+  - cd ../..
+  - bundle exec rspec
