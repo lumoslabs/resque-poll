@@ -9,11 +9,7 @@ gem 'rails', '~> 4.2.0'
 gem 'responders'
 
 group :test do
-  gem "capybara"
-  gem "capybara-webkit"
   gem "ejs"
-  gem 'poltergeist'
-  gem "konacha"
-  gem "konacha-chai-matchers"
+  gem 'jasmine'
   gem "sinon-chai-rails"
 end

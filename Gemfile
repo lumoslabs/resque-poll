@@ -5,14 +5,10 @@ gemspec
 gem "coffee-rails"
 gem "jquery-rails"
 gem "resque-status"
-gem 'rails', '~> 4.0.0'
+gem 'rails', '~> 5.0.0'
 
 group :test do
-  gem "capybara"
-  gem "capybara-webkit"
   gem "ejs"
-  gem 'poltergeist'
-  gem "konacha"
-  gem "konacha-chai-matchers"
+  gem "jasmine"
   gem "sinon-chai-rails"
 end

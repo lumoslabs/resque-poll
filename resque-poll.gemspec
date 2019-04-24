@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'fakeredis'
   s.add_development_dependency 'pry'
   s.add_development_dependency 'rspec-its', '~> 1.1.0'
-  s.add_development_dependency 'rspec-rails', '~> 3.2.1'
+  s.add_development_dependency 'rspec-rails', '~> 3.2'
   s.add_development_dependency 'sqlite3'
 end
