@@ -9,6 +9,4 @@ gem 'rails', '~> 5.0.0'
 
 group :test do
   gem "ejs"
-  gem "jasmine"
-  gem "sinon-chai-rails"
 end

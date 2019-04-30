@@ -10,6 +10,4 @@ gem 'responders'
 
 group :test do
   gem "ejs"
-  gem 'jasmine'
-  gem "sinon-chai-rails"
 end

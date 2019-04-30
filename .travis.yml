@@ -6,9 +6,6 @@ rvm:
   - 2.3.3
 
 script:
-  - cd spec/dummy
-  - RAILS_ENV=test bundle exec rake konacha:run
-  - cd ../..
   - bundle exec rspec
 
 gemfile:
@@ -17,8 +14,3 @@ gemfile:
   - Gemfile-rails-4.2.x
   - Gemfile-rails-5.0.x
   - Gemfile-rails-5.1.x
-
-matrix:
-  allow_failures:
-    - gemfile: Gemfile-rails-5.0.x
-    - gemfile: Gemfile-rails-5.1.x

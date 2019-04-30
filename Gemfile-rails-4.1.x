@@ -9,6 +9,4 @@ gem 'rails', '~> 4.1.0'
 
 group :test di
   gem "ejs"
-  gem 'jasmine'
-  gem "sinon-chai-rails"
 end
