@@ -5,7 +5,14 @@ describe ResquePoll::JobsController, type: :controller do
   routes { ResquePoll::Engine.routes }
 
   describe 'GET show' do
-    subject { get :show, {id: job_id, format: :json}; response }
+    subject do
+      if Rails::VERSION::MAJOR >= 5
+        get :show, params: { id: job_id, format: :json }
+      else
+        get :show, { id: job_id, format: :json }
+      end
+      response
+    end
 
     context 'with a non-existent job ID' do
       let(:job_id) { 'non-existent' }

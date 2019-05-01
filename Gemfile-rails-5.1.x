@@ -8,13 +8,8 @@ gem "resque-status"
 gem 'rails', '~> 5.1.0'
 gem 'responders'
 gem 'rspec-rails', '~> 3.5.0'
+gem 'sqlite3', '~> 1.3.6'
 
 group :test do
-  gem "capybara"
-  gem "capybara-webkit"
   gem "ejs"
-  gem 'poltergeist'
-  gem "konacha" # PR for rails 5 https://github.com/jfirebaugh/konacha/pull/233
-  gem "konacha-chai-matchers"
-  gem "sinon-chai-rails"
 end
