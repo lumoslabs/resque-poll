@@ -52,7 +52,7 @@ The following events are fired:
 
 * `resque:poll:stopped` - fired when processing has finished successfully or unsuccessfully
 * `resque:poll:success` - fired when processing has finished successfully
-* `resque:poll:stopped` - fired when processing has finished unsuccessfully
+* `resque:poll:error`   - fired when processing has finished unsuccessfully
 
 Continuing with our form from above:
 
